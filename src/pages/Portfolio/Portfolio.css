@@ -1,0 +1,188 @@
+/* Portfolio.css - Estilos Adicionais */
+
+.portfolio-container {
+    color: var(--text-white);
+    margin-top: 4rem;
+}
+
+/* Cards de Experiência */
+.experience-card {
+    background-color: var(--bg-surface-muted);
+    border: 1px solid var(--border-color);
+    border-radius: 18px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+}
+
+.experience-card:hover {
+    border-color: var(--text-primary);
+    background-color: rgba(138, 162, 255, 0.08);
+    transform: translateY(-2px);
+}
+
+/* Tech Tags */
+.tech-tag {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: 9999px;
+    padding: 0.3rem 0.8rem;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    transition: all 0.2s ease;
+}
+
+.tech-tag:hover {
+    color: var(--text-primary);
+    border-color: var(--text-primary);
+}
+
+/* Project Cards */
+.project-card {
+    background-color: var(--bg-surface-muted);
+    border: 1px solid var(--border-color);
+    border-radius: 18px;
+    padding: 2rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+}
+
+.project-card:hover {
+    border-color: var(--text-primary);
+    background-color: rgba(138, 162, 255, 0.08);
+    transform: translateY(-4px);
+}
+
+.project-badge {
+    background-color: rgba(138, 162, 255, 0.15);
+    color: var(--text-primary);
+    padding: 0.3rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+/* Metric Tags */
+.metric-tag {
+    background: linear-gradient(135deg, rgba(138, 162, 255, 0.1), rgba(138, 162, 255, 0.2));
+    color: var(--text-primary);
+    padding: 0.3rem 0.8rem;
+    border-radius: 8px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border: 1px solid rgba(138, 162, 255, 0.3);
+}
+
+/* Stack Tags */
+.stack-tag {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 0.3rem 0.8rem;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    transition: all 0.2s ease;
+}
+
+.stack-tag:hover {
+    color: var(--text-primary);
+    border-color: var(--text-primary);
+}
+
+/* Keyword Tags */
+.keyword-tag {
+    background-color: rgba(138, 162, 255, 0.08);
+    color: var(--text-muted);
+    padding: 0.2rem 0.6rem;
+    border-radius: 6px;
+    font-size: 0.7rem;
+    border: 1px solid transparent;
+}
+
+/* Skill Categories */
+.skill-category {
+    background-color: var(--bg-surface-muted);
+    border: 1px solid var(--border-color);
+    border-radius: 18px;
+    padding: 1.5rem;
+}
+
+.skill-item {
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.skill-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+/* Education Cards */
+.education-card {
+    background-color: var(--bg-surface-muted);
+    border: 1px solid var(--border-color);
+    border-radius: 18px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.education-card:hover {
+    border-color: var(--text-primary);
+    background-color: rgba(138, 162, 255, 0.08);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .portfolio-hero {
+        padding: 1.5rem;
+    }
+    
+    .experience-card,
+    .project-card,
+    .skill-category,
+    .education-card {
+        padding: 1.5rem;
+    }
+    
+    .project-card {
+        margin-bottom: 1.5rem;
+    }
+}
+
+/* Animações */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.portfolio-container section {
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.portfolio-container section:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.portfolio-container section:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+.portfolio-container section:nth-child(4) {
+    animation-delay: 0.3s;
+}
+
+.portfolio-container section:nth-child(5) {
+    animation-delay: 0.4s;
+}
+
+.portfolio-container section:nth-child(6) {
+    animation-delay: 0.5s;
+}

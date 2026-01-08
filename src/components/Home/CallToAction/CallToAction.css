@@ -1,0 +1,78 @@
+:root {
+  --cta-gradient: linear-gradient(135deg, #0f172a, #1e293b);
+}
+
+/* Section */
+.cta {
+  padding: clamp(4rem, 6vw, 7rem) 1rem;
+  background: var(--cta-gradient);
+}
+
+/* Container */
+.cta-container {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Badge */
+.cta-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 1rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  background: rgba(138, 150, 255, 0.12);
+  margin-bottom: 1.5rem;
+}
+
+/* Header */
+.cta-header h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.cta-header h2 span {
+  color: #667eea;
+}
+
+.cta-header p {
+  margin-top: 1rem;
+  font-size: 1rem;
+  color: #9ca3af;
+  line-height: 1.6;
+}
+
+/* Stats */
+.cta-stats {
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+}
+
+.stat {
+  padding: 1.25rem;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: 0.25s ease;
+}
+
+.stat:hover {
+  transform: translateY(-4px);
+  border-color: #667eea;
+}
+
+.value {
+  display: block;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.label {
+  font-size: 0.75rem;
+  color: #9ca3af;
+}

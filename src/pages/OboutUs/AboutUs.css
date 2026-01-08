@@ -1,0 +1,85 @@
+.about-section p {
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin-top: 1rem;
+    font-size: 0.95rem;
+}
+
+.section-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--text-white);
+    margin-bottom: 1rem;
+}
+
+.about-highlights {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .about-highlights {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.highlight-card {
+    background-color: var(--bg-surface-muted);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    transition: all 0.3s ease;
+}
+
+.highlight-card svg {
+    color: var(--text-primary);
+    width: 28px;
+    height: 28px;
+}
+
+.highlight-card h3 {
+    color: var(--text-white);
+    font-size: 1.05rem;
+    font-weight: 600;
+}
+
+.highlight-card p {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+.highlight-card:hover {
+    border-color: var(--text-primary);
+    transform: translateY(-3px);
+    background-color: rgba(138, 162, 255, 0.08);
+}
+
+.values-list {
+    margin-top: 1rem;
+    display: grid;
+    gap: 0.5rem;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+.about-cta {
+    text-align: center;
+}
+
+.about-cta-button {
+    display: inline-block;
+    background-color: var(--bg-primary);
+    color: var(--text-white);
+    padding: 0.75rem 2.5rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.about-cta-button:hover {
+    background-color: var(--text-primary);
+}

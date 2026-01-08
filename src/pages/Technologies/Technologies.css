@@ -1,0 +1,89 @@
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2rem;
+}
+
+@media (min-width: 768px) {
+    .tech-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .tech-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.tech-card {
+    background-color: var(--bg-surface-muted);
+    border: 1px solid var(--border-color);
+    border-radius: 18px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.tech-card:hover {
+    border-color: var(--text-primary);
+    transform: translateY(-4px);
+    background-color: rgba(138, 162, 255, 0.08);
+}
+
+.tech-card-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.tech-icon {
+    width: 42px;
+    height: 42px;
+    color: var(--text-primary);
+}
+
+.tech-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-white);
+}
+
+.tech-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.tech-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    transition: color 0.2s ease;
+}
+
+.tech-item svg {
+    color: var(--text-primary);
+}
+
+.tech-card:hover .tech-item {
+    color: var(--text-light);
+}
+
+.tech-cta-button {
+    display: inline-block;
+    background-color: var(--bg-primary);
+    color: var(--text-white);
+    padding: 0.7rem 2rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.tech-cta-button:hover {
+    background-color: var(--text-primary);
+}

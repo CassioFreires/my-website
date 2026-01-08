@@ -1,0 +1,140 @@
+:root {
+  --step-1: #8a96ff;
+  --step-2: #10b981;
+  --step-3: #f59e0b;
+  --step-4: #ef4444;
+  --step-5: #8b5cf6;
+}
+
+/* Section */
+
+.process-header {
+  max-width: 720px;
+  margin: 0 auto 4rem;
+  text-align: center;
+}
+
+.process-badge {
+  display: inline-block;
+  padding: 0.4rem 1rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  background: rgba(138, 150, 255, 0.12);
+  margin-bottom: 1rem;
+}
+
+.process-header h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+}
+
+.process-header h2 span {
+  color: #667eea;
+}
+
+.process-header p {
+  margin-top: 1rem;
+  color: #9ca3af;
+  line-height: 1.6;
+}
+
+/* Grid */
+.process-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Card */
+.process-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  transition: 0.3s ease;
+}
+
+.process-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-6px);
+}
+
+/* Header */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--accent) 20%, transparent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+}
+
+.meta {
+  text-align: right;
+}
+
+.step-id {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.duration {
+  font-size: 0.7rem;
+  color: #9ca3af;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+/* Content */
+.content h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.content p {
+  font-size: 0.9rem;
+  color: #9ca3af;
+  line-height: 1.6;
+}
+
+/* Deliverables */
+.deliverables span {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.deliverables ul {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  list-style: none;
+  padding: 0;
+}
+
+.deliverables li {
+  font-size: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: #9ca3af;
+}
