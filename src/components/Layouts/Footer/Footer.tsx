@@ -5,7 +5,6 @@ import {
   MapPin,
   FileText,
   ExternalLink,
-  Heart
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import "./Footer.css";
@@ -16,9 +15,9 @@ export default function Footer() {
     role: "Desenvolvedor Full Stack & Analista de Sistemas",
     location: "Rio de Janeiro – RJ",
     email: "cassio_souza@live.com",
-    linkedin: "https://linkedin.com/in/cassio-souza",
+    linkedin: "https://www.linkedin.com/in/cassio-souza-08347a157/",
     github: "https://github.com/CassioFreires",
-    resume: "/CASSIO_SOUZA_CV.pdf"
+    resume: "./public/Cassio_Freires_Souza_CV_ATS.pdf"
   };
 
   return (
@@ -98,7 +97,7 @@ export default function Footer() {
           </span>
 
           <span className="footer-made">
-            Desenvolvido com <Heart size={14} /> por {candidate.name}
+            Desenvolvido por {candidate.name}
           </span>
         </div>
 

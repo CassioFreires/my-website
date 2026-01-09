@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 :root {
     /* Text */
     --text-primary: #8aa2ff;
@@ -30,6 +29,9 @@
 
     /* Border */
     --border-color: #1e293b;
+
+    --container-width: 1200px;
+    --content-gap: 2rem;
 
 }
 

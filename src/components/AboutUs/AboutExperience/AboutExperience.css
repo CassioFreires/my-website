@@ -1,0 +1,101 @@
+/* --- Seção de Experiência --- */
+.experience-section {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem;
+  width: 100%;
+}
+
+/* --- Cabeçalho --- */
+.experience-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem; /* Aumentado levemente para melhor respiro */
+  color: var(--text-primary);
+  margin-bottom: 2rem;
+}
+
+.experience-header h2 {
+  font-size: clamp(1.5rem, 3vw, 1.8rem); /* Responsivo */
+  font-weight: 700;
+  color: var(--text-white);
+  letter-spacing: -0.02em;
+}
+
+/* --- Lista de Experiências --- */
+.experience-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  list-style: none; /* Garante que não apareçam bullets */
+  padding: 0;
+}
+
+.experience-list li {
+  padding: 1.5rem;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.03); /* Fallback caso a variável não carregue */
+  background: var(--bg-surface-muted);
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+  display: grid;
+  grid-template-columns: 1fr auto; /* Desktop: Título e Cargo à esquerda, Data à direita */
+  align-items: start;
+  gap: 0.5rem;
+}
+
+/* Efeito de destaque no hover */
+.experience-list li:hover {
+  border-color: var(--text-primary);
+  transform: translateX(5px);
+  background: rgba(138, 162, 255, 0.05);
+}
+
+.experience-list strong {
+  display: block;
+  font-size: 1.1rem;
+  color: var(--text-white);
+  grid-column: 1;
+}
+
+.experience-list span {
+  display: block;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  grid-column: 1;
+}
+
+.experience-list small {
+  font-size: 0.85rem;
+  color: var(--text-primary); /* Data ganha destaque sutil */
+  font-weight: 500;
+  text-align: right;
+}
+
+/* --- Media Queries --- */
+
+/* Ajuste para Tablets e Telas Médias */
+@media (max-width: 768px) {
+  .experience-section {
+    padding: 3rem 1.25rem;
+  }
+}
+
+/* Ajuste para Celulares (Layout em Coluna Única) */
+@media (max-width: 480px) {
+  .experience-list li {
+    grid-template-columns: 1fr; /* Quebra a data para baixo do título */
+    padding: 1.25rem;
+  }
+
+  .experience-list small {
+    text-align: left; /* Alinha a data à esquerda no mobile */
+    margin-top: 0.25rem;
+    font-size: 0.8rem;
+  }
+
+  .experience-header {
+    justify-content: center; /* Centraliza o título no mobile se desejar */
+    margin-bottom: 1.5rem;
+  }
+}

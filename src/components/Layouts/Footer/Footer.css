@@ -1,5 +1,9 @@
+:root {
+  --cta-gradient: linear-gradient(135deg, #0f172a, #1e293b);
+}
+
 .footer {
-  background: var(--bg-surface);
+  background: var(--cta-gradient);
   border-top: 1px solid var(--border-color);
 }
 

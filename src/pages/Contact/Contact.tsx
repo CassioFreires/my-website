@@ -2,7 +2,7 @@ import { Mail, MapPin, MessageSquare, Send } from 'lucide-react'
 import './Contact.css'
 
 function Contact() {
-  const phoneNumber = '5521999999999'
+  const phoneNumber = '5521981753423'
   const waMessage = encodeURIComponent(
     'Olá, gostaria de conversar sobre meu projeto!'
   )
@@ -62,20 +62,8 @@ function Contact() {
       <footer className="contact-info">
         <div>
           <Mail size={18} />
-          <a href="mailto:seuemail@dominio.com">seuemail@dominio.com</a>
+          <a href="mailto:cassio_souza@live.com">cassio_souza@live.com</a>
         </div>
-
-        <div>
-          <MessageSquare size={18} />
-          <a
-            href={`https://wa.me/${phoneNumber}`}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            +55 21 99999-9999
-          </a>
-        </div>
-
         <div>
           <MapPin size={18} />
           <span>Rio de Janeiro, RJ</span>

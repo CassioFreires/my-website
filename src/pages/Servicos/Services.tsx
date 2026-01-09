@@ -1,98 +1,74 @@
-import { Code, Layout, Database, Cloud, ShieldCheck, ArrowRight } from 'lucide-react';
+import { Code, Layout, Cloud, ArrowRight, CheckCircle2 } from 'lucide-react';
 import './Services.css';
 
 function Services() {
     const services = [
         {
             icon: <Layout />,
-            title: 'Frontend Moderno',
-            description: 'Interfaces rápidas, acessíveis e responsivas focadas em UX/UI e conversão.',
-            items: ['React', 'Tailwind CSS', 'Design Responsivo', 'Acessibilidade']
+            title: 'Desenvolvimento Frontend Profissional',
+            description: 'Transformo designs em interfaces de alta performance, focadas na experiência do usuário e conversão de clientes.',
+            items: ['Aplicações Web com React/Next.js', 'Landing Pages de Alta Conversão', 'Otimização de Performance (SEO)', 'Interfaces Responsivas e Acessíveis']
         },
         {
             icon: <Code />,
-            title: 'Backend & APIs',
-            description: 'APIs robustas, seguras e escaláveis para aplicações modernas.',
-            items: ['Node.js', 'NestJS', 'REST', 'Autenticação JWT']
-        },
-        {
-            icon: <Database />,
-            title: 'Banco de Dados',
-            description: 'Modelagem e otimização de dados para performance e confiabilidade.',
-            items: ['PostgreSQL', 'MongoDB', 'MySQL', 'ORMs']
+            title: 'Sistemas Web & APIs sob Medida',
+            description: 'Desenvolvimento de regras de negócio complexas com arquitetura escalável e segura para o crescimento do seu produto.',
+            items: ['APIs RESTful e Microserviços', 'Integração de Pagamentos e Webhooks', 'Autenticação e Segurança de Dados', 'Sistemas de Gestão (SaaS)']
         },
         {
             icon: <Cloud />,
-            title: 'Soluções Corporativas',
-            description: 'Integrações e sustentação de sistemas corporativos e ERPs.',
-            items: ['Oracle Cloud ERP', 'JD Edwards', 'Integrações', 'Automação']
-        },
-        {
-            icon: <ShieldCheck />,
-            title: 'Boas Práticas & Segurança',
-            description: 'Código limpo, versionado e seguindo padrões de mercado.',
-            items: ['Clean Code', 'Versionamento Git', 'Segurança', 'Escalabilidade']
+            title: 'Consultoria e Integração ERP',
+            description: 'Especialista em conectar processos de negócio a soluções tecnológicas, focando em automação e eficiência operacional.',
+            items: ['Integrações Oracle Cloud/JD Edwards', 'Automação de Workflows', 'Relatórios e Dashboards Estratégicos', 'Migração e Sustentação de Dados']
         }
     ];
 
     return (
-        <main className="services-container max-w-7xl mx-auto px-6 py-20 space-y-20">
-
-            {/* HERO */}
-            <section className="services-hero text-center max-w-3xl mx-auto">
-                <h1 className="text-4xl font-bold text-[var(--text-white)] mb-4">
-                    Serviços
-                </h1>
-                <p className="text-[var(--text-muted)] text-lg">
-                    Desenvolvimento de soluções digitais modernas, escaláveis e alinhadas
-                    aos objetivos do seu negócio.
+        <main className="services-page">
+            <section className="services-hero">
+                <span className="hero-badge">Disponível para novos projetos</span>
+                <h1>Soluções Digitais que <br className="desktop-only" /> <span className="highlight">impulsionam resultados</span></h1>
+                <p>
+                    Ajudo empresas e empreendedores a tirarem ideias do papel através de desenvolvimento 
+                    de software robusto, design inteligente e consultoria técnica especializada.
                 </p>
             </section>
 
-            {/* LISTA DE SERVIÇOS */}
-            <section className="services-grid">
-                {services.map((service, index) => (
-                    <article key={index} className="service-card">
-                        <div className="service-icon">
-                            {service.icon}
-                        </div>
-
-                        <h3 className="service-title">{service.title}</h3>
-                        <p className="service-description">{service.description}</p>
-
-                        <ul className="service-list">
-                            {service.items.map((item, i) => (
-                                <li key={i}>{item}</li>
-                            ))}
-                        </ul>
-                    </article>
-                ))}
+            <section className="services-grid-container">
+                <div className="services-grid">
+                    {services.map((service, index) => (
+                        <article key={index} className="service-card">
+                            <div className="service-icon">{service.icon}</div>
+                            <h3 className="service-title">{service.title}</h3>
+                            <p className="service-description">{service.description}</p>
+                            <ul className="service-list">
+                                {service.items.map((item, i) => (
+                                    <li key={i}>
+                                        <CheckCircle2 size={18} className="check-icon" />
+                                        <span>{item}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                        </article>
+                    ))}
+                </div>
             </section>
 
-            {/* DIFERENCIAL */}
-            <section className="services-diff text-center max-w-4xl mx-auto">
-                <h2 className="text-3xl font-bold text-[var(--text-white)] mb-4">
-                    Como posso ajudar seu projeto
-                </h2>
-                <p className="text-[var(--text-muted)] text-lg">
-                    Meu foco não é apenas escrever código, mas entregar soluções bem
-                    planejadas, seguras e sustentáveis a longo prazo.
-                </p>
+            <section className="services-cta-section">
+                <div className="cta-box">
+                    <h2>Pronto para escalar seu negócio?</h2>
+                    <p>Vamos agendar uma conversa para entender os desafios do seu projeto e como posso ajudar.</p>
+                    <a
+                        href="https://wa.me/5521999999999"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="cta-main-button"
+                    >
+                        Solicitar orçamento gratuito
+                        <ArrowRight size={20} />
+                    </a>
+                </div>
             </section>
-
-            {/* CTA */}
-            <section className="services-cta text-center">
-                <a
-                    href="https://wa.me/5521999999999"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="services-cta-button"
-                >
-                    Falar sobre meu projeto
-                    <ArrowRight className="w-5 h-5" />
-                </a>
-            </section>
-
         </main>
     );
 }

@@ -1,0 +1,80 @@
+/* --- Seção de Valores --- */
+.values-section {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem;
+  text-align: center; /* Centraliza o título para manter a harmonia com o Hero */
+}
+
+.values-section h2 {
+  color: var(--text-white);
+  font-size: clamp(1.8rem, 4vw, 2.2rem);
+  font-weight: 800;
+  margin-bottom: 2.5rem;
+  letter-spacing: -0.02em;
+}
+
+/* --- Lista de Valores --- */
+.values-section ul {
+  display: grid;
+  /* Grid flexível: 2 colunas se houver espaço, senão 1 coluna */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  list-style: none; /* Remove os bullets padrão */
+  padding: 0;
+  text-align: left; /* Mantém o texto dos itens à esquerda */
+}
+
+.values-section li {
+  background: rgba(138, 162, 255, 0.03);
+  border: 1px solid var(--border-color);
+  padding: 1rem 1.25rem;
+  border-radius: 12px;
+  color: var(--text-muted);
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  transition: all 0.2s ease;
+}
+
+/* Adicionando um marcador personalizado via CSS */
+.values-section li::before {
+  content: "→"; /* Ou use um caractere de check ✓ */
+  color: var(--text-primary);
+  font-weight: bold;
+  font-family: monospace;
+}
+
+/* Efeito de destaque discreto */
+.values-section li:hover {
+  background: rgba(138, 162, 255, 0.08);
+  border-color: var(--text-primary);
+  color: var(--text-white);
+  transform: translateX(4px);
+}
+
+/* --- Media Queries --- */
+
+@media (max-width: 600px) {
+  .values-section {
+    padding: 3rem 1.25rem;
+  }
+
+  .values-section h2 {
+    margin-bottom: 1.5rem;
+  }
+
+  .values-section li {
+    font-size: 0.95rem;
+    padding: 0.85rem 1rem;
+  }
+}
+
+/* Para telas muito largas, garantimos que não fique esticado demais */
+@media (min-width: 1200px) {
+  .values-section {
+    max-width: 900px;
+    padding: 6rem 1.5rem;
+  }
+}

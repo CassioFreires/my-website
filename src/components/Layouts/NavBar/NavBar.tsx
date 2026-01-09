@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Contact } from "lucide-react";
 import "./NavBar.css";
 
 export default function Navbar() {
@@ -21,7 +21,9 @@ export default function Navbar() {
         <nav className="navbar-container">
           {/* Logo */}
           <Link to="/" className="navbar-logo" onClick={closeMenu}>
-            Cassio Souza
+            <span className="logo-bracket">{"{"}</span>
+            <span className="logo-text">Cassio.dev</span>
+            <span className="logo-bracket">{"}"}</span>
           </Link>
 
           {/* Desktop Menu */}
@@ -33,6 +35,7 @@ export default function Navbar() {
             <li>
               <Link to="/contato" className="btn-contato" onClick={closeMenu}>
                 Contato
+                <Contact size={18} />
               </Link>
             </li>
           </ul>

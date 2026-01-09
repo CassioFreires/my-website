@@ -1,123 +1,156 @@
+import { useRef } from 'react';
 import {
   Search,
   Calendar,
   Code,
   TestTube,
   Rocket,
-  CheckCircle,
-  FileText,
   Clock,
-} from "lucide-react";
-import "./WorkProcess.css";
+  FileText,
+  CheckCircle,
+  ChevronLeft,
+  ChevronRight
+} from 'lucide-react';
 
-const steps = [
-  {
-    id: "01",
-    title: "Entendimento",
-    description:
-      "Levantamento dos objetivos, desafios e contexto para definição clara do escopo.",
-    icon: <Search size={22} />,
-    duration: "1–2 semanas",
-    deliverables: ["Requisitos", "Arquitetura", "Cronograma"],
-    color: "var(--step-1)",
-  },
-  {
-    id: "02",
-    title: "Planejamento",
-    description:
-      "Organização do roadmap, prazos, custos e priorização das entregas.",
-    icon: <Calendar size={22} />,
-    duration: "3–5 dias",
-    deliverables: ["Roadmap", "Estimativas", "Backlog"],
-    color: "var(--step-2)",
-  },
-  {
-    id: "03",
-    title: "Desenvolvimento",
-    description:
-      "Implementação com foco em qualidade, performance e boas práticas.",
-    icon: <Code size={22} />,
-    duration: "4–12 semanas",
-    deliverables: ["Código", "Documentação", "Builds"],
-    color: "var(--step-3)",
-  },
-  {
-    id: "04",
-    title: "Validação",
-    description:
-      "Testes, ajustes e validação para garantir aderência aos requisitos.",
-    icon: <TestTube size={22} />,
-    duration: "1–2 semanas",
-    deliverables: ["Testes", "Feedback", "Checklist"],
-    color: "var(--step-4)",
-  },
-  {
-    id: "05",
-    title: "Entrega",
-    description:
-      "Deploy final, documentação e suporte para transição tranquila.",
-    icon: <Rocket size={22} />,
-    duration: "1 semana",
-    deliverables: ["Produção", "Treinamento", "Suporte"],
-    color: "var(--step-5)",
-  },
-];
+import './WorkProcess.css';
 
-export default function WorkProcess() {
+function WorkProcess() {
+  const carouselRef = useRef<HTMLDivElement | null>(null);
+
+  const scroll = (direction: 'left' | 'right') => {
+    if (!carouselRef.current) return;
+
+    const scrollAmount = 320;
+    carouselRef.current.scrollBy({
+      left: direction === 'left' ? -scrollAmount : scrollAmount,
+      behavior: 'smooth'
+    });
+  };
+
+  const steps = [
+    {
+      id: '01',
+      title: 'Entendimento',
+      desc: 'Levantamento de objetivos, desafios e contexto.',
+      icon: <Search size={22} />,
+      duration: '1–2 semanas',
+      items: ['Requisitos', 'Arquitetura', 'Cronograma'],
+      color: 'var(--step-1)'
+    },
+    {
+      id: '02',
+      title: 'Planejamento',
+      desc: 'Definição de roadmap, prazos e prioridades.',
+      icon: <Calendar size={22} />,
+      duration: '3–5 dias',
+      items: ['Roadmap', 'Estimativas', 'Backlog'],
+      color: 'var(--step-2)'
+    },
+    {
+      id: '03',
+      title: 'Desenvolvimento',
+      desc: 'Implementação com foco em qualidade e performance.',
+      icon: <Code size={22} />,
+      duration: '4–12 semanas',
+      items: ['Código', 'Documentação', 'Builds'],
+      color: 'var(--step-3)'
+    },
+    {
+      id: '04',
+      title: 'Validação',
+      desc: 'Testes e ajustes para garantir aderência.',
+      icon: <TestTube size={22} />,
+      duration: '1–2 semanas',
+      items: ['Testes', 'Feedback', 'Checklist'],
+      color: 'var(--step-4)'
+    },
+    {
+      id: '05',
+      title: 'Entrega',
+      desc: 'Deploy, documentação e suporte.',
+      icon: <Rocket size={22} />,
+      duration: '1 semana',
+      items: ['Produção', 'Treinamento', 'Suporte'],
+      color: 'var(--step-5)'
+    }
+  ];
+
   return (
-    <section className="process" id="processo">
+    <section className="process-section" id="processo">
       <header className="process-header">
-        <span className="process-badge">Metodologia</span>
-
-        <h2>
-          Fluxo de <span>Trabalho</span>
+        <h2 className="section-title">
+          Fluxo de <span className="title-highlight">Trabalho</span>
         </h2>
 
-        <p>
-          Processo estruturado para entregar soluções de software com
-          previsibilidade, qualidade e foco em negócio.
+        <p className="section-subtitle">
+          Processo estruturado para entregar software com previsibilidade.
+        </p>
+
+        <p className="carousel-hint">
+          Arraste ou use as setas para navegar
         </p>
       </header>
 
-      <div className="process-grid">
-        {steps.map((step) => (
-          <article
-            key={step.id}
-            className="process-card"
-            style={{ "--accent": step.color } as React.CSSProperties}
-          >
-            <header className="card-header">
-              <div className="icon">{step.icon}</div>
+      <div className="carousel-wrapper">
+        <button
+          className="carousel-btn left"
+          onClick={() => scroll('left')}
+          aria-label="Voltar"
+        >
+          <ChevronLeft size={20} />
+        </button>
 
-              <div className="meta">
-                <span className="step-id">{step.id}</span>
-                <span className="duration">
-                  <Clock size={12} /> {step.duration}
+        <div className="carousel" ref={carouselRef}>
+          {steps.map(step => (
+            <article
+              key={step.id}
+              className="process-card"
+              style={{ '--accent': step.color } as React.CSSProperties}
+            >
+              <header className="card-header">
+                <div className="step-icon">{step.icon}</div>
+
+                <div className="step-meta">
+                  <span className="step-id">{step.id}</span>
+                  <span className="step-duration">
+                    <Clock size={12} /> {step.duration}
+                  </span>
+                </div>
+              </header>
+
+              <h3 className="step-title">{step.title}</h3>
+              <p className="step-desc">{step.desc}</p>
+
+              <div className="step-deliverables">
+                <span className="deliverables-title">
+                  <FileText size={14} /> Entregáveis
                 </span>
+
+                <ul>
+                  {step.items.map(item => (
+                    <li key={item}>
+                      <CheckCircle size={12} /> {item}
+                    </li>
+                  ))}
+                </ul>
               </div>
-            </header>
+            </article>
+          ))}
+        </div>
 
-            <div className="content">
-              <h3>{step.title}</h3>
-              <p>{step.description}</p>
-            </div>
+        <button
+          className="carousel-btn right"
+          onClick={() => scroll('right')}
+          aria-label="Avançar"
+        >
+          <ChevronRight size={20} />
+        </button>
 
-            <footer className="deliverables">
-              <span>
-                <FileText size={14} /> Entregáveis
-              </span>
-
-              <ul>
-                {step.deliverables.map((item) => (
-                  <li key={item}>
-                    <CheckCircle size={12} /> {item}
-                  </li>
-                ))}
-              </ul>
-            </footer>
-          </article>
-        ))}
+        <div className="carousel-gradient left" />
+        <div className="carousel-gradient right" />
       </div>
     </section>
   );
 }
+
+export default WorkProcess;

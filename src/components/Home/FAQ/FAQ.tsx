@@ -12,7 +12,7 @@ function FAQ() {
 
     const [openIndex, setOpenIndex] = useState(null);
 
-    const toggleFAQ = (index:any) => {
+    const toggleFAQ = (index: any) => {
         setOpenIndex(openIndex === index ? null : index);
     };
 
@@ -31,12 +31,13 @@ function FAQ() {
                         <button className="faq-question" onClick={() => toggleFAQ(index)}>
                             <span>{faq.question}</span>
                             <ChevronDown
-                                className={`faq-chevron transition-transform duration-300 ${openIndex === index ? 'rotate-180' : ''}`}
+                                className={`faq-chevron ${openIndex === index ? 'rotate-180' : ''}`}
                             />
                         </button>
-                        {openIndex === index && (
+
+                        <div className={`faq-answer-wrapper ${openIndex === index ? 'open' : ''}`}>
                             <p className="faq-answer">{faq.answer}</p>
-                        )}
+                        </div>
                     </div>
                 ))}
             </div>

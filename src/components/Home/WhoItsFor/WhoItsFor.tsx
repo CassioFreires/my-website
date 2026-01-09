@@ -138,7 +138,7 @@ function WhoItsFor() {
                 ))}
               </div>
 
-              <a href="/contato" className="audience-cta">
+              <a href="/my-website/#/contato" className="audience-cta">
                 Discutir projeto <ArrowRight size={16} />
               </a>
             </article>
@@ -162,20 +162,6 @@ function WhoItsFor() {
               <p className="results-text">{study.results}</p>
             </article>
           ))}
-        </div>
-
-        <div className="who-cta">
-          <h3>Seu projeto se encaixa aqui?</h3>
-          <p>Vamos conversar e definir a melhor solução técnica.</p>
-
-          <div className="cta-actions">
-            <a href="/contato" className="cta-button-primary">
-              Iniciar conversa <ArrowRight size={18} />
-            </a>
-            <a href="/portfolio" className="cta-button-secondary">
-              Ver portfólio
-            </a>
-          </div>
         </div>
       </div>
     </section>

@@ -1,7 +1,6 @@
 import {
   Star,
   Quote,
-  Building,
   CheckCircle
 } from "lucide-react";
 import "./Testimonials.css";
