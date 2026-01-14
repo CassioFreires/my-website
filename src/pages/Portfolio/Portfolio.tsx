@@ -152,33 +152,36 @@ function Portfolio() {
     ];
     const technicalSkills = {
         'Linguagens & Frameworks': [
-            { name: 'Node.js', level: 92 },
-            { name: 'NestJS', level: 88 },
-            { name: 'TypeScript', level: 90 }, // Essencial para seu stack
-            { name: 'React', level: 85 },
-            { name: 'Tailwind', level: 80 },
-            { name: 'MUI (Material UI)', level: 85 } // Você mencionou usar no Sistema AFA
+            { name: 'Node.js' },
+            { name: 'NestJS' },
+            { name: 'TypeScript' }, // Essencial para seu stack
+            { name: 'React' },
+            { name: 'Tailwind' },
+            { name: 'MUI (Material UI)' } // Você mencionou usar no Sistema AFA
         ],
         'Banco de Dados & Cloud': [
-            { name: 'PostgreSQL', level: 88 },
-            { name: 'Google Cloud (GCP)', level: 82 },
-            { name: 'Docker', level: 80 },
-            { name: 'Oracle SQL', level: 85 }, // Pela experiência na Ancar com ERP
-            { name: 'Serverless', level: 75 } // Cloud Run / Functions mencionadas
+            { name: 'PostgreSQL' },
+            { name: 'Google Cloud (GCP)' },
+            { name: 'Docker' },
+            { name: 'Oracle SQL' }, // Pela experiência na Ancar com ERP
+            { name: 'Serverless' } // Cloud Run / Functions mencionadas
         ],
         'Metodologias & Ferramentas': [
-            { name: 'Git & CI/CD', level: 92 },
-            { name: 'APIs RESTful', level: 94 },
-            { name: 'Salesforce & Oracle ERP', level: 85 }, // Valoriza sua visão corporativa
-            { name: 'Clean Architecture & SOLID', level: 90 }, // Citado nos seus projetos
-            { name: 'Scrum/Kanban', level: 88 }
+            { name: 'Git & CI/CD' },
+            { name: 'APIs RESTful' },
+            { name: 'Salesforce & Oracle ERP' }, // Valoriza sua visão corporativa
+            { name: 'Clean Architecture & SOLID' }, // Citado nos seus projetos
+            { name: 'Scrum/Kanban' }
         ]
     };
 
     return (
         <main className="portfolio-container max-w-7xl mx-auto px-4 sm:px-6 py-12 space-y-20">
             <Hero profile={candidateProfile} strategicValue={strategicValue} />
-
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <EducationCard title="Pós-graduação em Engenharia de Software" school="Descomplica" period="2025 – 2026" />
+                <EducationCard title="Análise e Desenvolvimento de Sistemas" school="Estácio" period="2021 – 2023" isCompleted />
+            </div>
             <section className="portfolio-experience">
                 <div className="flex items-center gap-3 mb-8">
                     <div className="bg-[var(--text-primary)]/10 p-2 rounded-lg"><Briefcase size={24} className="text-[var(--text-primary)]" /></div>
@@ -213,10 +216,6 @@ function Portfolio() {
                 <div className="flex items-center gap-3 mb-8">
                     <div className="bg-[var(--text-primary)]/10 p-2 rounded-lg"><School size={24} className="text-[var(--text-primary)]" /></div>
                     <h2 className="text-2xl font-bold text-[var(--text-white)]">Formação Acadêmica</h2>
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <EducationCard title="Pós-graduação em Engenharia de Software" school="Descomplica" period="2025 – 2026" />
-                    <EducationCard title="Análise e Desenvolvimento de Sistemas" school="Estácio" period="2021 – 2023" isCompleted />
                 </div>
             </section>
 

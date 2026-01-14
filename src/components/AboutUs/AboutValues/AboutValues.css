@@ -71,6 +71,12 @@
   }
 }
 
+
+@media (max-width: 768px) {
+  .values-section {
+    margin-top: 13rem;
+  }
+}
 /* Para telas muito largas, garantimos que não fique esticado demais */
 @media (min-width: 1200px) {
   .values-section {

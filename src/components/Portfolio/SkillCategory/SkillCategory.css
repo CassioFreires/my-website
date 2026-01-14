@@ -1,18 +1,163 @@
+/* ================== REVEAL DO CARD ================== */
+@keyframes cardReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(60px) scale(0.9) rotateX(15deg);
+    filter: blur(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1) rotateX(0);
+    filter: blur(0);
+  }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(60px) scale(0.9);
+  filter: blur(10px);
+}
+
+.reveal.active {
+  animation: cardReveal 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* ================== CARD ================== */
 .skill-category {
-    background-color: var(--bg-surface-muted);
-    border: 1px solid var(--border-color);
-    border-radius: 18px;
-    padding: 1.5rem;
-    animation: fadeInUp 0.6s ease-out forwards;
-    animation-delay: 0.3s;
+  background: linear-gradient(135deg, var(--bg-surface-muted), var(--bg-surface));
+  border: 1px solid var(--border-color);
+  border-radius: 22px;
+  padding: 1.75rem;
+  position: relative;
+  overflow: hidden;
+  transition: 0.4s ease;
 }
 
+.skill-category:hover {
+  border-color: var(--text-primary);
+  box-shadow: 0 20px 45px rgba(138,162,255,0.25);
+  transform: translateY(-4px) scale(1.01);
+}
+
+/* brilho */
+.skill-category::before {
+  content: '';
+  position: absolute;
+  inset: -50%;
+  background: radial-gradient(circle at top right, rgba(138,162,255,.18), transparent 60%);
+  opacity: 0;
+  transition: .4s;
+}
+.skill-category:hover::before {
+  opacity: 1;
+}
+
+.skill-title {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text-white);
+  margin-bottom: 1.4rem;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: .7rem;
+}
+
+/* ================== LISTA ================== */
+.skill-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+/* ================== ITEM ================== */
 .skill-item {
-    padding-bottom: 1rem;
-    border-bottom: 1px solid var(--border-color);
+  opacity: 0;
+  transform: translateX(-25px) scale(.95);
+  animation: itemReveal .7s cubic-bezier(.22,1,.36,1) forwards;
 }
 
-.skill-item:last-child {
-    border-bottom: none;
-    padding-bottom: 0;
+.reveal.active .skill-item {
+  animation-play-state: running;
+}
+
+@keyframes itemReveal {
+  60% {
+    transform: translateX(5px) scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+/* ================== CABEÇALHO ================== */
+.skill-head {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  margin-bottom: .35rem;
+}
+
+.skill-icon {
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  background: linear-gradient(135deg, var(--text-primary), #6c7cff);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: iconFloat 3s ease-in-out infinite;
+}
+
+@keyframes iconFloat {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+.skill-item span {
+  font-size: .85rem;
+  color: var(--text-white);
+}
+
+/* ================== BARRA ================== */
+.skill-bar {
+  height: 6px;
+  background: var(--bg-surface);
+  border-radius: 999px;
+  overflow: hidden;
+  position: relative;
+}
+
+.skill-bar::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(110deg, transparent, rgba(255,255,255,.18), transparent);
+  transform: translateX(-100%);
+  animation: shine 2.8s infinite;
+}
+
+@keyframes shine {
+  to { transform: translateX(100%); }
+}
+
+.skill-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--text-primary), #6c7cff);
+  animation: fillBar 1.3s ease forwards;
+  animation-delay: .4s;
+}
+
+@keyframes fillBar {
+  from { width: 0%; }
+  to { width: 100%; }
+}
+
+/* ================== MOBILE ================== */
+@media (max-width: 768px) {
+  .skill-category { padding: 1.1rem; }
+  .skill-title { font-size: 1rem; }
+  .skill-item span { font-size: .75rem; }
+  .skill-bar { height: 4px; }
 }

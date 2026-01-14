@@ -5,6 +5,7 @@
     max-width: 1200px;
     margin: 0 auto;
     padding: clamp(3rem, 8vw, 6rem) 1.5rem;
+    width: 100%;
 }
 
 /* Header */
@@ -92,6 +93,7 @@
 @media (max-width: 768px) {
     .faq-container {
         padding: 4rem 1rem;
+        margin-top: 11rem;
     }
 
     .faq-question {

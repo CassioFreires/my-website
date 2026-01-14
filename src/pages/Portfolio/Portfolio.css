@@ -3,6 +3,7 @@
 .portfolio-container {
     color: var(--text-white);
     margin-top: 4rem;
+    padding-bottom: 2rem;
 }
 
 /* Cards de Experiência */
@@ -135,6 +136,10 @@
 
 /* Responsividade */
 @media (max-width: 768px) {
+    .space-y-20 > :not([hidden]) ~ :not([hidden]) {
+        --tw-space-y-reverse: 0;
+        margin-top: 2.5rem; /* Reduz espaço entre seções de 5rem para 2.5rem */
+    }
     .portfolio-hero {
         padding: 1.5rem;
     }

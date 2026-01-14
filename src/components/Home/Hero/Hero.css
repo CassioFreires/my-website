@@ -4,7 +4,11 @@
   --tech-react: #61DAFB;
   --tech-postgres: #336791;
   --tech-gcp: #4285F4;
-  --hero-gradient: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+  --hero-gradient: linear-gradient(
+  135deg,
+  rgba(15, 23, 42, 0.7) 0%,
+  rgba(30, 41, 59, 0.7) 100%
+);
   --text-primary: #8AA2FF;
   --text-primary-dark: #667eea;
   --text-white: #ffffff;
@@ -20,10 +24,11 @@
   position: relative;
   overflow: hidden;
   min-height: 100vh;
-  background: var(--hero-gradient);
   display: flex;
   align-items: center;
   padding: 100px 5% 60px 5%;
+  width: 100%;
+  margin-top: 5rem;
 }
 
 .hero-container {

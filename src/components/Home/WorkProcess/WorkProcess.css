@@ -13,10 +13,10 @@
   min-height: 100vh;
   overflow: hidden;
   padding: clamp(2rem, 5vw, 4rem) 5%;
-  background: linear-gradient(135deg, #0f172a, #1e293b);
   display: flex;
   flex-direction: column;
   justify-content: center;
+  width: 100%;
 }
 
 .process-header {

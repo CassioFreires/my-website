@@ -1,14 +1,109 @@
 .education-card {
-    background-color: var(--bg-surface-muted);
-    border: 1px solid var(--border-color);
-    border-radius: 18px;
-    padding: 1.5rem;
-    transition: all 0.3s ease;
-    animation: fadeInUp 0.6s ease-out forwards;
-    animation-delay: 0.4s;
+  background: linear-gradient(
+    135deg,
+    var(--bg-surface-muted),
+    rgba(138, 162, 255, 0.04)
+  );
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  padding: 1.6rem;
+  transition: all 0.35s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.education-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at top right,
+    rgba(138, 162, 255, 0.18),
+    transparent 60%
+  );
+  opacity: 0;
+  transition: 0.35s ease;
+}
+
+.education-card:hover::after {
+  opacity: 1;
 }
 
 .education-card:hover {
-    border-color: var(--text-primary);
-    background-color: rgba(138, 162, 255, 0.08);
+  transform: translateY(-6px) scale(1.01);
+  border-color: var(--text-primary);
+}
+
+.education-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  z-index: 1;
+}
+
+.education-icon {
+  background: rgba(138, 162, 255, 0.15);
+  color: var(--text-primary);
+  padding: 0.75rem;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.education-main h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-white);
+}
+
+.education-main p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.education-status {
+  margin-left: auto;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.education-card.completed .education-status {
+  background: rgba(34, 197, 94, 0.15);
+  color: #22c55e;
+}
+
+.education-card.progress .education-status {
+  background: rgba(251, 191, 36, 0.15);
+  color: #fbbf24;
+}
+
+.education-footer {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  z-index: 1;
+}
+
+/* Mobile refinamento */
+@media (max-width: 640px) {
+  .education-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.6rem;
+  }
+
+  .education-status {
+    margin-left: 0;
+  }
 }

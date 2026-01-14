@@ -1,25 +1,46 @@
-import { Layers, Server, Calendar } from 'lucide-react';
+import { Layers, Server, Calendar, CheckCircle2 } from 'lucide-react';
+import './EducationCard.css'
 
 interface EducationCardProps {
-    title: string;
-    school: string;
-    period: string;
-    isCompleted?: boolean; // O ponto de interrogação torna opcional
+  title: string;
+  school: string;
+  period: string;
+  isCompleted?: boolean;
 }
 
-export default function EducationCard({ title, school, period, isCompleted = false }: EducationCardProps) {
-    return (
-        <div className="education-card">
-            <div className="flex items-center gap-3 mb-4">
-                <div className="bg-[var(--text-primary)]/20 p-2 rounded-lg">
-                    {isCompleted ? <Server size={20} className="text-[var(--text-primary)]" /> : <Layers size={20} className="text-[var(--text-primary)]" />}
-                </div>
-                <div>
-                    <h3 className="text-lg font-bold text-[var(--text-white)]">{title}</h3>
-                    <p className="text-[var(--text-muted)]">{school}</p>
-                </div>
-            </div>
-            <p className="text-sm text-[var(--text-muted)] flex items-center gap-2"><Calendar size={14} /> {period} {isCompleted && '(Concluído)'}</p>
+export default function EducationCard({
+  title,
+  school,
+  period,
+  isCompleted = false,
+}: EducationCardProps) {
+  return (
+    <div className={`education-card ${isCompleted ? 'completed' : 'progress'}`}>
+      <div className="education-header">
+        <div className="education-icon">
+          {isCompleted ? <Server size={20} /> : <Layers size={20} />}
         </div>
-    );
+
+        <div className="education-main">
+          <h3>{title}</h3>
+          <p>{school}</p>
+        </div>
+
+        <span className="education-status">
+          {isCompleted ? (
+            <>
+              <CheckCircle2 size={14} /> Concluído
+            </>
+          ) : (
+            'Em andamento'
+          )}
+        </span>
+      </div>
+
+      <div className="education-footer">
+        <Calendar size={14} />
+        <span>{period}</span>
+      </div>
+    </div>
+  );
 }

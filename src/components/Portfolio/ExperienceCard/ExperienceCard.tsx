@@ -1,4 +1,5 @@
 import { Building, Calendar, CheckCircle2 } from 'lucide-react';
+import './ExperienceCard.css'
 
 interface Experience {
     company: string;

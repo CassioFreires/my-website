@@ -1,4 +1,5 @@
 import { GitCommit, Mail, Users } from 'lucide-react';
+import './ContactCTA.css'
 
 interface ContactCTAProps {
     profile: {

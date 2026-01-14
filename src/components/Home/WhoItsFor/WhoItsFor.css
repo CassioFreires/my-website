@@ -3,7 +3,6 @@
   --audience-1: #8a96ff;
   --audience-2: #10b981;
   --audience-3: #f59e0b;
-  --surface: #0f0f0f;
   --border: rgba(255, 255, 255, 0.08);
   --text-muted: rgba(255, 255, 255, 0.7);
   --section-gap: clamp(3rem, 8vw, 6rem);
@@ -16,6 +15,7 @@
   background-color: var(--surface);
   padding: var(--section-gap) 5%;
   color: #fff;
+  width: 100%;
 }
 
 .who-container {
@@ -242,6 +242,7 @@
 /* --- Responsividade Ajustada --- */
 @media (max-width: 768px) {
   .who-header {
+    margin-top: 5rem;
     text-align: left;
     align-items: flex-start;
   }
@@ -250,9 +251,15 @@
     padding: 1.5rem;
   }
 
+  .section-content {
+    padding-bottom: 2rem;
+  }
+
   .case-studies-grid {
     grid-template-columns: 1fr;
   }
+
+  
 }
 
 @media (prefers-reduced-motion: reduce) {

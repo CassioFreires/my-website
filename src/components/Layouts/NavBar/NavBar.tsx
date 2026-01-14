@@ -30,7 +30,7 @@ export default function Navbar() {
           <ul className="navbar-menu">
             <li><Link to="/" onClick={closeMenu}>Home</Link></li>
             <li><Link to="/sobre" onClick={closeMenu}>Sobre</Link></li>
-            <li><Link to="/servicos" onClick={closeMenu}>Serviços</Link></li>
+            {/* <li><Link to="/servicos" onClick={closeMenu}>Serviços</Link></li> */}
             <li><Link to="/portfolio" onClick={closeMenu}>Portfólio</Link></li>
             <li>
               <Link to="/contato" className="btn-contato" onClick={closeMenu}>
@@ -56,7 +56,7 @@ export default function Navbar() {
       <div className={`navbar-mobile ${isOpen ? "open" : ""}`}>
         <Link to="/" onClick={closeMenu}>Home</Link>
         <Link to="/sobre" onClick={closeMenu}>Sobre</Link>
-        <Link to="/servicos" onClick={closeMenu}>Serviços</Link>
+        {/* <Link to="/servicos" onClick={closeMenu}>Serviços</Link> */}
         <Link to="/portfolio" onClick={closeMenu}>Portfólio</Link>
         <Link to="/contato" className="btn-contato" onClick={closeMenu}>
           Contato

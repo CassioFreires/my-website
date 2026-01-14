@@ -15,6 +15,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 
 /* Efeito de Brilho de Fundo (Glow) */
@@ -134,6 +135,9 @@
 
 /* Tablet e Mobile Médio */
 @media (max-width: 768px) {
+  .cta {
+    margin-top: 11rem;
+  }
   .cta-stats {
     grid-template-columns: 1fr; /* Empilha tudo em mobile */
     gap: 1rem;

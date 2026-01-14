@@ -1,6 +1,10 @@
+import './SkillCategory.css';
+import React, { useEffect, useRef } from 'react';
+import { Sparkles } from 'lucide-react';
+
 interface Skill {
   name: string;
-  level: number;
+  icon?: React.ReactNode;
 }
 
 interface SkillCategoryProps {
@@ -8,23 +12,53 @@ interface SkillCategoryProps {
   skills: Skill[];
 }
 
-export default function SkillCategory({ title, skills }:SkillCategoryProps) {
-    return (
-        <div className="skill-category">
-            <h3 className="text-lg font-semibold text-[var(--text-white)] mb-6 pb-3 border-b border-[var(--border-color)]">{title}</h3>
-            <div className="space-y-6">
-                {skills.map(skill => (
-                    <div key={skill.name} className="skill-item">
-                        <div className="flex justify-between mb-2">
-                            <span className="text-[var(--text-white)] text-sm">{skill.name}</span>
-                            <span className="text-[var(--text-primary)] text-sm font-medium">{skill.level}%</span>
-                        </div>
-                        <div className="h-2 bg-[var(--bg-surface)] rounded-full overflow-hidden">
-                            <div className="h-full bg-gradient-to-r from-[var(--text-primary)] to-[var(--text-primary)]/70" style={{ width: `${skill.level}%` }}></div>
-                        </div>
-                    </div>
-                ))}
-            </div>
-        </div>
+export default function SkillCategory({ title, skills }: SkillCategoryProps) {
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+
+    const obs = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+            obs.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.2 }
     );
+
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
+
+  return (
+    <div ref={ref} className="skill-category reveal">
+      <h3 className="skill-title">{title}</h3>
+
+      <div className="skill-list">
+        {skills.map((skill, i) => (
+          <div
+            key={skill.name}
+            className="skill-item"
+            style={{ animationDelay: `${i * 0.12}s` }}
+          >
+            <div className="skill-head">
+              <div className="skill-icon">
+                {skill.icon || <Sparkles size={14} />}
+              </div>
+              <span>{skill.name}</span>
+            </div>
+
+            <div className="skill-bar">
+              <div className="skill-fill" />
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
 }

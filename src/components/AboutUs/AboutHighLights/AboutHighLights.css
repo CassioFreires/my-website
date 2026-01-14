@@ -68,6 +68,13 @@
   }
 }
 
+@media (max-width: 768px) {
+  .highlights-section {
+    margin-top: 12rem;
+  }
+}
+
+
 /* Desktops (4 Colunas) */
 @media (min-width: 1024px) {
   .highlights-section {
