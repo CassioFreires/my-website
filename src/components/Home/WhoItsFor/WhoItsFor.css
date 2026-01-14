@@ -242,7 +242,7 @@
 /* --- Responsividade Ajustada --- */
 @media (max-width: 768px) {
   .who-header {
-    margin-top: 5rem;
+    margin-top: 12rem;
     text-align: left;
     align-items: flex-start;
   }

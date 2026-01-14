@@ -84,6 +84,7 @@
   .hero-content {
     align-items: flex-start;
     text-align: left;
+    margin-top: 5rem;
   }
 
   .hero-tech-stack {
